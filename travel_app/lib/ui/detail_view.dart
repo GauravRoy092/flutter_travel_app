@@ -95,6 +95,7 @@ class _DetailViewState extends State<DetailView> {
                 children: [
                   FadeAnimation(
                     delay: .1,
+                    isLoading: true,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -129,6 +130,7 @@ class _DetailViewState extends State<DetailView> {
                   ),
                   FadeAnimation(
                     delay: .2,
+                    isLoading: true,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -178,8 +180,8 @@ class _DetailViewState extends State<DetailView> {
                                   ),
                                   children: <TextSpan>[
                                     TextSpan(
-                                      text: '(${travelList[widget.id]
-                                              .distance}km)',
+                                      text:
+                                          '(${travelList[widget.id].distance}km)',
                                       style: const TextStyle(
                                         color: Colors.black,
                                       ),
@@ -196,17 +198,22 @@ class _DetailViewState extends State<DetailView> {
                   ),
                   FadeAnimation(
                     delay: .3,
-                    child: Text(travelList[widget.id].description, style: const TextStyle(
-                      color: Color(0xff686771),
-                      fontWeight: FontWeight.w400,
-                      fontSize: 18,
-                    ),),
+                    isLoading: true,
+                    child: Text(
+                      travelList[widget.id].description,
+                      style: const TextStyle(
+                        color: Color(0xff686771),
+                        fontWeight: FontWeight.w400,
+                        fontSize: 18,
+                      ),
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   FadeAnimation(
                     delay: .4,
+                    isLoading: true,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -214,14 +221,20 @@ class _DetailViewState extends State<DetailView> {
                         Container(
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            borderRadius: const BorderRadius.all(Radius.circular(10)),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(10)),
                             border: Border.all(
                               color: const Color(0xff8f294f),
                             ),
                           ),
-                          child: const Icon(Icons.favorite_border, color: Color(0xff8f294f),),
+                          child: const Icon(
+                            Icons.favorite_border,
+                            color: Color(0xff8f294f),
+                          ),
                         ),
-                        const SizedBox(width: 5,),
+                        const SizedBox(
+                          width: 5,
+                        ),
                         Expanded(
                           child: Container(
                             padding: const EdgeInsets.all(9),
@@ -230,13 +243,17 @@ class _DetailViewState extends State<DetailView> {
                               border: Border.all(
                                 color: const Color(0xff8f294f),
                               ),
-                              borderRadius: const BorderRadius.all(Radius.circular(10)),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(10)),
                             ),
                             child: const Center(
-                              child: Text('Discover', style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18.0,
-                              ),),
+                              child: Text(
+                                'Discover',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18.0,
+                                ),
+                              ),
                             ),
                           ),
                         ),
