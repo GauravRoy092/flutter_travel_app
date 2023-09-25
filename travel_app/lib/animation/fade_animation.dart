@@ -24,7 +24,7 @@ class FadeAnimation extends StatelessWidget {
           child: child,
         ),
         if (isLoading) // Display the loading spinner conditionally
-          Center(
+          const Center(
             child: SpinKitFadingCircle(
               color: Colors.blue, // Customize the color as needed
               size: 50.0, // Adjust the size as needed
@@ -36,19 +36,23 @@ class FadeAnimation extends StatelessWidget {
 }
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: YourPage(),
     );
   }
 }
 
 class YourPage extends StatefulWidget {
+  const YourPage({super.key});
+
   @override
   _YourPageState createState() => _YourPageState();
 }
@@ -63,7 +67,7 @@ class _YourPageState extends State<YourPage> {
     });
 
     // Simulate a time-consuming operation (e.g., fetching data from an API)
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       setState(() {
         isLoading =
             false; // Hide the loading spinner when the operation is done
@@ -75,7 +79,7 @@ class _YourPageState extends State<YourPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your Page'),
+        title: const Text('Your Page'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -83,8 +87,8 @@ class _YourPageState extends State<YourPage> {
           // Your content, including the FadeAnimation widget
           FadeAnimation(
             delay: 0.5,
-            child: YourContentWidget(),
-            isLoading: isLoading, // Pass the isLoading flag
+            isLoading: isLoading,
+            child: const YourContentWidget(), // Pass the isLoading flag
           ),
         ],
       ),
@@ -93,16 +97,18 @@ class _YourPageState extends State<YourPage> {
           // Trigger the fetchData function to start loading
           fetchData();
         },
-        child: Icon(Icons.refresh),
+        child: const Icon(Icons.refresh),
       ),
     );
   }
 }
 
 class YourContentWidget extends StatelessWidget {
+  const YourContentWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     // Your content widget goes here
-    return Text('Your Content');
+    return const Text('Your Content');
   }
 }
